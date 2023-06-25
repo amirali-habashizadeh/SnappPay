@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230625 02:40:24.051" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Case 2" source="C:\Amirali\SnappPay\test case 2.robot">
+<test id="s1-t1" name="Open SnappPay Application and View Purchase Orders" line="5">
+<kw name="Open Application">
+<arg>snapppay</arg>
+<msg timestamp="20230625 02:40:24.207" level="FAIL">Keyword 'Open Application' expected 0 arguments, got 1.</msg>
+<status status="FAIL" starttime="20230625 02:40:24.207" endtime="20230625 02:40:24.207"/>
+</kw>
+<kw name="Log">
+<arg>Purchase Orders</arg>
+<status status="NOT RUN" starttime="20230625 02:40:24.207" endtime="20230625 02:40:24.207"/>
+</kw>
+<kw name="Capture Page Screenshot">
+<arg>Screenshot_Purchase_Orders</arg>
+<status status="NOT RUN" starttime="20230625 02:40:24.207" endtime="20230625 02:40:24.207"/>
+</kw>
+<status status="FAIL" starttime="20230625 02:40:24.192" endtime="20230625 02:40:24.207">Keyword 'Open Application' expected 0 arguments, got 1.</status>
+</test>
+<status status="FAIL" starttime="20230625 02:40:24.051" endtime="20230625 02:40:24.207"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Case 2">Test Case 2</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230625 02:40:24.192" level="ERROR">Error in file 'C:\Amirali\SnappPay\test case 2.robot' on line 2: Importing library 'RobotFrameworkLibrary' failed: ModuleNotFoundError: No module named 'RobotFrameworkLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\amirali habashizadeh\AppData\Roaming\JetBrains\PyCharm2023.1\plugins\robotframework-intellij\lib\robotframework_debug_adapter
+  C:\Amirali\SnappPay
+  C:\Users\amirali habashizadeh\AppData\Roaming\JetBrains\PyCharm2023.1\plugins\robotframework-intellij\lib
+  C:\Users\amirali habashizadeh\AppData\Roaming\JetBrains\PyCharm2023.1\plugins\robotframework-intellij\lib\robotframework_ls\vendored
+  C:\Users\amirali habashizadeh\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\amirali habashizadeh\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\amirali habashizadeh\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\amirali habashizadeh\AppData\Local\Programs\Python\Python311
+  C:\Amirali\SnappPay\venv
+  C:\Amirali\SnappPay\venv\Lib\site-packages</msg>
+</errors>
+</robot>
