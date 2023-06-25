@@ -7,23 +7,6 @@ Open SnappPay Application and View Purchase Orders
     Log    Purchase Orders
     Capture Page Screenshot    Screenshot_Purchase_Orders
 
-*** Keywords ***
-Open Application
-    Open Browser    www.snapppay.ir    chrome
-
-Log
-    Log To Console    Purchase Orders
-
-Capture Page Screenshot
-    Capture Page Screenshot    ${OUTPUT_DIR}/Screenshot_Purchase_Orders.png
-
-
-
-
-*** Settings ***
-Library    RobotFrameworkLibrary
-
-*** Test Cases ***
 Pay Upcoming Installment and Take Screenshot
     Open Application    snapppay
     Open Debts Tab
@@ -42,3 +25,6 @@ Pay Upcoming Installment
 
 Capture Page Screenshot
     Capture Page Screenshot    ${OUTPUT_DIR}/Screenshot_After_Payment.png
+
+Log
+    Log To Console    Purchase Orders
