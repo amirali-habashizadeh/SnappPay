@@ -1,65 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230625 11:09:59.006" rpa="false" schemaversion="4">
-<suite id="s1" name="Login" source="C:\Amirali\SnappPay\Login.robot">
-<test id="s1-t1" name="Login" line="5">
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230626 17:08:15.638" rpa="false" schemaversion="4">
+<suite id="s1" name="SnappPayTest" source="C:\Amirali\SnappPay\Test\SnappPayTest.robot">
+<test id="s1-t1" name="Open SnappPay Application and View Purchase Orders" line="13">
+<kw name="Open Application">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.saucedemo.com/</arg>
-<arg>chrome</arg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230625 11:09:59.715" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<msg timestamp="20230625 11:09:59.715" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20230625 11:09:59.715" level="FAIL">TypeError: WebDriver.__init__() got an unexpected keyword argument 'service_log_path'</msg>
-<status status="FAIL" starttime="20230625 11:09:59.709" endtime="20230625 11:09:59.715"/>
+<msg timestamp="20230626 17:08:19.036" level="INFO">Opening browser 'chrome' to base url 'https://pl.snapp.ir/home?openedVia=snappSuperAppPWA&amp;token=DL.37Z_aHcr%3ATG87vqdtaDThbVutGqJ1WPnjtAh-ke5qwOxaGm1rpBTQ70swH8p0F_soh41qU5WLiklKCYL6Z4o6Nw&amp;utm_campaign=PWA&amp;utm_medium=CreditIcon&amp;utm_source=SuperApp&amp;app_version=v17.1.0'.</msg>
+<msg timestamp="20230626 17:08:19.084" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230626 17:08:19.031" endtime="20230626 17:10:03.385"/>
+</kw>
+<status status="PASS" starttime="20230626 17:08:19.029" endtime="20230626 17:10:04.001"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.715" endtime="20230625 11:09:59.715"/>
+<status status="PASS" starttime="20230626 17:10:04.036" endtime="20230626 17:10:08.224"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>id:user-name</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.715" endtime="20230625 11:09:59.715"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//p[${TEXT}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230626 17:10:08.278" level="INFO">Clicking button 'xpath=//p[متوجه شدم]'.</msg>
+<msg timestamp="20230626 17:10:19.658" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230626 17:10:19.682" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //p[متوجه شدم] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//p[متوجه شدم]' is not a valid XPath expression.
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00B8A813+48355]
+	(No symbol) [0x00B1C4B1]
+	(No symbol) [0x00A25358]
+	(No symbol) [0x00A287A1]
+	(No symbol) [0x00A299E1]
+	(No symbol) [0x00A29A80]
+	(No symbol) [0x00A5061C]
+	(No symbol) [0x00A50B3B]
+	(No symbol) [0x00A7E26C]
+	(No symbol) [0x00A6A784]
+	(No symbol) [0x00A7C922]
+	(No symbol) [0x00A6A536]
+	(No symbol) [0x00A482DC]
+	(No symbol) [0x00A493DD]
+	GetHandleVerifier [0x00DEAABD+2539405]
+	GetHandleVerifier [0x00E2A78F+2800735]
+	GetHandleVerifier [0x00E2456C+2775612]
+	GetHandleVerifier [0x00C151E0+616112]
+	(No symbol) [0x00B25F8C]
+	(No symbol) [0x00B22328]
+	(No symbol) [0x00B2240B]
+	(No symbol) [0x00B14FF7]
+	BaseThreadInitThunk [0x76840099+25]
+	RtlGetAppContainerNamedObjectPath [0x77257B6E+286]
+	RtlGetAppContainerNamedObjectPath [0x77257B3E+238]
+</msg>
+<status status="FAIL" starttime="20230626 17:10:08.225" endtime="20230626 17:10:20.170"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:user-name</arg>
-<arg>standard_user</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.715" endtime="20230625 11:09:59.715"/>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//p[${FILTER_NAME}]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230626 17:10:20.179" endtime="20230626 17:10:20.181"/>
 </kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>id:password</arg>
-<arg>secret_sauce</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.715" endtime="20230625 11:09:59.715"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230626 17:10:20.209" endtime="20230626 17:10:20.211"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:login-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.715" endtime="20230625 11:09:59.715"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.715" endtime="20230625 11:09:59.715"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20230625 11:09:59.731" endtime="20230625 11:09:59.731"/>
-</kw>
-<status status="FAIL" starttime="20230625 11:09:59.709" endtime="20230625 11:09:59.731">TypeError: WebDriver.__init__() got an unexpected keyword argument 'service_log_path'</status>
+<status status="FAIL" starttime="20230626 17:08:19.024" endtime="20230626 17:10:20.238">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //p[متوجه شدم] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//p[متوجه شدم]' is not a valid XPath expression.
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00B8A813+48355]
+	(No symbol) [0x00B1C4B1]
+	(No symbol) [0x00A25358]
+	(No symbol) [0x00A287A1]
+	(No symbol) [0x00A299E1]
+	(No symbol) [0x00A29A80]
+	(No symbol) [0x00A5061C]
+	(No symbol) [0x00A50B3B]
+	(No symbol) [0x00A7E26C]
+	(No symbol) [0x00A6A784]
+	(No symbol) [0x00A7C922]
+	(No symbol) [0x00A6A536]
+	(No symbol) [0x00A482DC]
+	(No symbol) [0x00A493DD]
+	GetHandleVerifier [0x00DEAABD+2539405]
+	GetHandleVerifier [0x00E2A78F+2800735]
+	GetHandleVerifier [0x00E2456C+2775612]
+	GetHandleVerifier [0x00C151E0+616112]
+	(No symbol) [0x00B25F8C]
+	(No symbol) [0x00B22328]
+	(No symbol) [0x00B2240B]
+	(No symbol) [0x00B14FF7]
+	BaseThreadInitThunk [0x76840099+25]
+	RtlGetAppContainerNamedObjectPath [0x77257B6E+286]
+	RtlGetAppContainerNamedObjectPath [0x77257B3E+238]
+</status>
 </test>
-<status status="FAIL" starttime="20230625 11:09:59.022" endtime="20230625 11:09:59.731"/>
+<test id="s1-t2" name="Pay Upcoming Installment and Take Screenshot" line="20">
+<kw name="Open Application">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230626 17:10:20.993" level="INFO">Opening browser 'chrome' to base url 'https://pl.snapp.ir/home?openedVia=snappSuperAppPWA&amp;token=DL.37Z_aHcr%3ATG87vqdtaDThbVutGqJ1WPnjtAh-ke5qwOxaGm1rpBTQ70swH8p0F_soh41qU5WLiklKCYL6Z4o6Nw&amp;utm_campaign=PWA&amp;utm_medium=CreditIcon&amp;utm_source=SuperApp&amp;app_version=v17.1.0'.</msg>
+<msg timestamp="20230626 17:10:21.053" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<msg timestamp="20230626 17:11:28.098" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F6471D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/24fa890db7c7388557d7b830af8c5592/screenshot</msg>
+<msg timestamp="20230626 17:11:32.443" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F5E65D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/24fa890db7c7388557d7b830af8c5592/screenshot</msg>
+<msg timestamp="20230626 17:11:37.144" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F61F490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/24fa890db7c7388557d7b830af8c5592/screenshot</msg>
+<msg timestamp="20230626 17:11:41.534" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=50813): Max retries exceeded with url: /session/24fa890db7c7388557d7b830af8c5592/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F6317D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<msg timestamp="20230626 17:11:41.538" level="FAIL">ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))</msg>
+<status status="FAIL" starttime="20230626 17:10:20.344" endtime="20230626 17:11:42.735"/>
+</kw>
+<status status="FAIL" starttime="20230626 17:10:20.298" endtime="20230626 17:11:42.739"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20230626 17:11:42.741" endtime="20230626 17:11:42.742"/>
+</kw>
+<kw name="Open Debts Tab">
+<status status="NOT RUN" starttime="20230626 17:11:42.743" endtime="20230626 17:11:42.744"/>
+</kw>
+<kw name="Pay Upcoming Installment">
+<status status="NOT RUN" starttime="20230626 17:11:42.745" endtime="20230626 17:11:42.746"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230626 17:11:42.747" endtime="20230626 17:11:42.747"/>
+</kw>
+<status status="FAIL" starttime="20230626 17:10:20.268" endtime="20230626 17:11:42.748">ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))</status>
+</test>
+<status status="FAIL" starttime="20230626 17:08:15.714" endtime="20230626 17:11:42.751"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="SnappPayTest">SnappPayTest</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230626 17:11:28.098" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F6471D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/24fa890db7c7388557d7b830af8c5592/screenshot</msg>
+<msg timestamp="20230626 17:11:32.443" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F5E65D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/24fa890db7c7388557d7b830af8c5592/screenshot</msg>
+<msg timestamp="20230626 17:11:37.144" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F61F490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/24fa890db7c7388557d7b830af8c5592/screenshot</msg>
+<msg timestamp="20230626 17:11:41.534" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=50813): Max retries exceeded with url: /session/24fa890db7c7388557d7b830af8c5592/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002980F6317D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
 </errors>
 </robot>
